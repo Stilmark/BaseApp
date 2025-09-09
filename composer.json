@@ -1,0 +1,12 @@
+{
+    "require": {
+        "stilmark/base": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "BaseApp\\Model\\": "app/models",
+            "BaseApp\\Controller\\": "app/controllers",
+            "BaseApp\\Class\\": "app/classes"
+        }
+    }
+}
