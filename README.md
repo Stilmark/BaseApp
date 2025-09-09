@@ -1,0 +1,2 @@
+# BaseApp
+Basic app scaffolding
