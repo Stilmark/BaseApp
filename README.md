@@ -27,8 +27,10 @@ Edit the Apache vhost file `/baseapp/.dist/baseApp.vhost.conf` to fit your appli
 
 Example:
 ```bash
-sudo ln -sfn /baseapp/.dist/baseApp.vhost.conf /etc/apache2/sites-enabled/baseApp.vhost.conf
+sudo ln -sfn /.../baseapp/.dist/baseApp.vhost.conf /etc/apache2/sites-enabled/baseApp.vhost.conf
 ```
+
+> Update the path to where baseapp is installed.
 
 Check the syntax of the vhost file:
 ```bash
@@ -39,6 +41,14 @@ Restart Apache:
 ```bash
 sudo apachectl reload
 ```
+
+## SSL certificate
+
+BaseApp comes with a self-signed SSL certificate. You can find it in the `.dist/ssl` directory.
+
+To use it, you need to add `/baseapp/.dist/ssl/base.dev.crt` to your keychain.
+
+> If you change the domain in the vhost file, you need to update the certificate.
 
 ## DNS override (MAC)
 
@@ -55,9 +65,9 @@ Edit the autoloader namespace in the composer.json file
 By default the namespace is `BaseApp` and the autoloader paths are:
 
 ```json
-"BaseApp\Model": "app/models",
-"BaseApp\Controller": "app/controllers",
-"BaseApp\Class": "app/classes"
+"BaseApp\\Model\\": "app/models",
+"BaseApp\\Controller\\": "app/controllers",
+"BaseApp\\Class\\": "app/classes"
 ```
 
 To change the namespace, update the namespace in the composer.json file and the autoloader paths in the composer.json file.
