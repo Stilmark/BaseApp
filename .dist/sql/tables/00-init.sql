@@ -1,0 +1,3 @@
+DROP DATABASE IF EXISTS baseapp;
+CREATE DATABASE baseapp;
+USE baseapp;

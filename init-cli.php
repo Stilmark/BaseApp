@@ -1,6 +1,8 @@
 <?php
 
-define('ROOT', __DIR__);
+if (!defined('ROOT')) {
+    define('ROOT', __DIR__);
+}
 define('WEBROOT', ROOT.'/public');
 
 // Load composer autoloader
