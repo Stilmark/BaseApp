@@ -16,5 +16,8 @@ sudo mysql < "$BASE_DIR/.dist/sql/init/user-database.sql"
 cd "$BASE_DIR"
 composer update
 
+# Symlink .env file
+ln -sfn "$BASE_DIR/.dist/env/.env.local" "$BASE_DIR/.env"
+
 # Build routes
 php "$BASE_DIR/.dist/bin/build-routes.php"
