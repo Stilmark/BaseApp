@@ -4,12 +4,7 @@ Basic app scaffolding
 ## Installation
 
 ```bash
-git clone git@github.com:Stilmark/BaseApp.git baseapp
-
-cd baseapp
-
-composer update
-
-./.dist/bin/install.sh
+git clone https://github.com/stilmark/baseApp.git baseapp
+./baseapp/.dist/bin/install.sh
 ```
 
