@@ -1,6 +1,7 @@
 {
     "require": {
-        "stilmark/base": "^1.0"
+        "stilmark/base": "^1.0",
+        "stilmark/database": "^1.3.10"
     },
     "autoload": {
         "psr-4": {
