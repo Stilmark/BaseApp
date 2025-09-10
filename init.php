@@ -20,4 +20,4 @@ use Stilmark\Base\Router;
 // Load environment variables from .env file
 Env::load(ROOT.'/.env');
 
-Router::init();
+Router::dispatch();
