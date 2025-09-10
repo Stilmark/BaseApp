@@ -1,6 +1,33 @@
 # BaseApp
 Basic app scaffolding
 
+## Prerequisites (minimum)
+
+- Ubuntu 24.04.3 LTS (or other Linux distribution)
+- Apache 2.4
+- PHP 8.3
+- MySQL 8.0
+- Composer
+- Git
+
+> If you are using a different version of PHP, you need to update the `install.sh` script.
+
+## LAMP stack install notes (Ubuntu)
+
+```bash
+sudo apt update && sudo apt -y upgrade
+```
+
+Install Apache2, PHP, MySQL, PHP extensions
+```bash
+sudo apt install -y apache2 mysql-server php libapache2-mod-php php-mysql php-cli php-curl php-gd php-mbstring php-xml php-zip
+```
+
+Enable and open firewall
+```bash
+sudo ufw allow "Apache Full" && sudo ufw allow mysql && sudo ufw allow OpenSSH
+```
+
 ## Installation
 
 Clone the repository
@@ -21,6 +48,14 @@ The install script will:
 - Update dependencies
 - Build routes
 
+## Enable Apache mods
+
+Enable required Apache mods.
+
+```bash
+sudo a2enmod rewrite remoteip ssl
+```
+
 ## Edit the Apache vhost file 
 
 Edit the Apache vhost file `/baseapp/.dist/baseApp.vhost.conf` to fit your application and symlink it in the `/etc/apache2/sites-enabled` directory.
@@ -39,7 +74,7 @@ sudo apachectl configtest
 
 Restart Apache:
 ```bash
-sudo apachectl reload
+sudo service apache2 reload
 ```
 
 ## SSL certificate
