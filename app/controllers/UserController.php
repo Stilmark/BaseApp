@@ -1,8 +1,8 @@
 <?php
 namespace BaseApp\Controller;
 
-use Stilmark\Base\Controller;
 use BaseApp\Model\User;
+use Stilmark\Base\Controller;
 
 final class UserController extends Controller
 {
