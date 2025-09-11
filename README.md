@@ -48,7 +48,7 @@ The install script will:
 - Update dependencies
 - Build routes
 
-## Enable Apache mods
+### Enable Apache mods
 
 Enable required Apache mods.
 
@@ -56,7 +56,7 @@ Enable required Apache mods.
 sudo a2enmod rewrite remoteip ssl
 ```
 
-## Edit the Apache vhost file 
+### Edit the Apache vhost file 
 
 Edit the Apache vhost file `/baseapp/.dist/baseApp.vhost.conf` to fit your application and symlink it in the `/etc/apache2/sites-enabled` directory.
 
@@ -77,7 +77,7 @@ Restart Apache:
 sudo service apache2 reload
 ```
 
-## SSL certificate
+### SSL certificate
 
 BaseApp comes with a self-signed SSL certificate. You can find it in the `.dist/ssl` directory.
 
@@ -85,7 +85,7 @@ To use it, you need to add `/baseapp/.dist/ssl/base.dev.crt` to your keychain.
 
 > If you change the domain in the vhost file, you need to update the certificate.
 
-## DNS override (MAC)
+### DNS override (MAC)
 
 Add the following line to your `/etc/hosts` file:
 ```bash
@@ -94,7 +94,7 @@ Add the following line to your `/etc/hosts` file:
 
 > Be sure that to point the domain to the correct IP address.
 
-## Edit the autoloader namespace
+### Edit the autoloader namespace
 Edit the autoloader namespace in the composer.json file
 
 By default the namespace is `BaseApp` and the autoloader paths are:
@@ -112,7 +112,7 @@ After updating the namespace, run the following command to update the autoloader
 composer dump-autoload
 ```
 
-## Edit the Controller namespace
+### Edit the Controller namespace
 
 Edit the namespace in the .env file.
 
@@ -120,3 +120,17 @@ Edit the namespace in the .env file.
 CONTROLLER_NS=BaseApp\Controller\\
 ```
 
+# Customization
+
+## Replace files (or edit)
+
+- /public/favicon.ico
+- /public/robots.txt
+
+# Utilities
+
+## Reset database
+
+```bash
+php .dist/bin/reset-db.php
+```
