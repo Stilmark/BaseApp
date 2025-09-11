@@ -4,6 +4,7 @@ use FastRoute\RouteCollector;
 // Public routes (no authentication required)
 $r->addGroup('/list', function (RouteCollector $r) {
     $r->addRoute('GET', '/staticVars', 'ListController@staticVars');
+    $r->addRoute('GET', '/user/{id:\d+}', 'UserController@index');
 });
 
 $r->addGroup('/signin', function (RouteCollector $r) {    
