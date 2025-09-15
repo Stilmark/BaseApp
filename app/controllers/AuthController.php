@@ -106,7 +106,8 @@ class AuthController extends Controller
     }
 
     public function logout() {
-        $this->auth->logout();
+        $auth = new Auth();
+        $auth->logout();
         $this->json([
             'status' => 'success'
         ]);
