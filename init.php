@@ -16,8 +16,13 @@ if (! @require ROOT.'/vendor/autoload.php') {
 
 use Stilmark\Base\Env;
 use Stilmark\Base\Router;
+use Stilmark\Base\Logger;
 
 // Load environment variables from .env file
 Env::load(ROOT.'/.env');
 
+// Initialize error reporting and Rollbar
+Logger::init();
+
+// Dispatch router
 Router::dispatch();
