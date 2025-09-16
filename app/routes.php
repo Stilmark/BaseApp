@@ -8,7 +8,7 @@ $r->addGroup('/list', function (RouteCollector $r) {
 });
 
 // Auth routes
-$r->addGroup('/signin', function (RouteCollector $r) {
+$r->addGroup('/auth', function (RouteCollector $r) {
     $r->addRoute('GET', '/{provider:(?:google|microsoft)}/callout', 'AuthController@callout');
     $r->addRoute('GET', '/{provider:(?:google|microsoft)}/callback', 'AuthController@callback');
 });
